@@ -1,7 +1,6 @@
 import { IoPower, IoPersonOutline, IoMegaphoneOutline, IoHelpSharp } from "react-icons/io5";
 import { NavbarItem } from "../atoms";
 
-
 export const NavbarContainer = () => {
 
     return (

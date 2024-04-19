@@ -13,10 +13,10 @@ export const SidebarItem = ({ icon, name  }: Props) => {
         href="/profile"
         className="flex items-center  py-1 px-2  hover:bg-blue-950 rounded transition-all"
       >
-        <div className=" text-white">
+        <div className=" text-blue-950">
             {icon}
         </div>
-        <span className="ml-2 py-2 text-sm text-white">{name}</span>
+        <span className="ml-2 py-2 text-sm text-blue-950">{name}</span>
       </Link>
     );
 };

@@ -1,4 +1,4 @@
-import { Navbar, Sidebar } from "@/components";
+import { Navbar, Sidebar, DropdownSpace } from "@/components";
 
 
 export default function ShopLayout( { children }: {
@@ -6,9 +6,10 @@ export default function ShopLayout( { children }: {
 } ) {
   return (
     <main className="min-h-screen">
-      <Sidebar/>
       <Navbar/>
-      <div className="px-0 sm:px-10">
+      <DropdownSpace/>
+
+      <div className="px-0">
         { children }
 
       </div>

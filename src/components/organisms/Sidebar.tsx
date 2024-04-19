@@ -26,25 +26,15 @@ export const Sidebar = () => {
   
   return (
     <div>
-      {/* Background black */}
-      {isSideMenuOpen && (
-        <div
-          className="fade-in fixed top-0 right-0 w-screen h-screen z-10 backdrop-filter backdrop-blur-sm drop-shadow-xl"
-        />
-      )}
-        {/* <div className="fixed top-0 right-0 w-screen h-screen z-10 bg-black opacity-10" /> */}
-
-      {/* Sidemenu */}
-      {isSideMenuOpen && (
             <nav
-                className="fixed p-1 left-0 top-0 w-[250px] h-screen bg-blue-900 z-20 shadow-2xl transform transition-all duration-300"
+                className=" p-1 left-0 top-0 w-[250px] h-screen bg-sky-100 z-20  transform transition-all duration-300"
             >
               <button 
                 onClick={closeSideMenu}
-                className=" w-full flex justify-end top-1 right-1 cursor-pointer">
+                className=" w-full justify-end top-1 right-1 cursor-pointer">
                   <IoCloseOutline
                       size={25}
-                      className="text-white"
+                      className="text-blue-950"
                   />
               </button>
        
@@ -60,10 +50,6 @@ export const Sidebar = () => {
               </div>
       
             </nav>
-          )}
-
-
-
     </div>
   );
 };
