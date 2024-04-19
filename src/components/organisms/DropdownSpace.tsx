@@ -13,7 +13,7 @@ export const DropdownSpace  = () => {
                   {
         categories.map( categories => (
           <DropdownContainer
-            key={ categories.id }
+            key={ categories.codigo }
             subCategories = {categories.subCategories}
           />
         ) )

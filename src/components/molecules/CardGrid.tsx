@@ -13,7 +13,7 @@ export const CardGrid = ({ data  }: Props) => {
 
   return (
     <div className="justify-center  items-center mt-5 ">
-      <div className="grid grid-cols-3 gap-3  w-11/12  mx-auto ">
+      <div className="grid grid-cols-3 gap-3   mx-auto ">
           {
         data.map( data => (
           <Card

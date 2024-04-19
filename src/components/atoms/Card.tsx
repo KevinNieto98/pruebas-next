@@ -11,7 +11,7 @@ interface Props {
 
 export const Card = ({ icon, name, codigo  }: Props) => {
     return (
-        <div className=" w-80 h-40 rounded-lg flex flex-col drop-shadow-lg">
+        <div className=" w-72 h-36 rounded-lg flex flex-col drop-shadow-lg">
             <div className="bg-blue-500 flex-grow rounded-t-lg flex justify-center items-center">
             <div className="w-16 h-16 bg-black bg-opacity-30 text-white flex justify-center items-center rounded-full">
                 <PiChartLineUpLight/>
