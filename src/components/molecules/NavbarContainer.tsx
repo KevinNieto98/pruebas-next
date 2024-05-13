@@ -9,7 +9,7 @@ export const NavbarContainer = () => {
                 <NavbarItem icon={<IoHelpSharp />} name="Ayuda" />
                 <NavbarItem icon={<IoMegaphoneOutline />} name="Comunicados: 0" />
                 <NavbarItem icon={<IoPersonOutline />} name="Kevin Alexis" />
-                <NavbarItem icon={<IoPower />} name="Cerrar Sesión" />
+                {/* <NavbarItem icon={<IoPower />} name="Cerrar Sesión" /> */}
                 
             </ul>
         </div>

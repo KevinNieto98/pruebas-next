@@ -1,5 +1,6 @@
 import { NavBar, Sidebar, DropdownSpace } from "@/components";
 import { NextUIProvider } from "@nextui-org/react";
+import {ThemeProvider as NextThemesProvider} from "next-themes";
 
 
 export default function ShopLayout( { children }: {
@@ -17,5 +18,6 @@ export default function ShopLayout( { children }: {
 
     </main>
     </NextUIProvider>
+
   );
 }

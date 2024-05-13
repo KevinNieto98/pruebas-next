@@ -8,8 +8,14 @@ import { DropdownButton } from '..';
 import { initialData } from '@/seed';
 
 
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Input, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar} from "@nextui-org/react";
-import {SearchIcon} from "./SearchIcon.jsx";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Input, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, Button, Switch} from "@nextui-org/react";
+
+import { FaHeart, FaMoon, FaStream } from 'react-icons/fa';
+import { IoIosNotifications } from 'react-icons/io';
+import { IoNotifications } from 'react-icons/io5';
+import { GoSun } from 'react-icons/go';
+import SwitchDarkMode from './SwitchDarkMode';
+import { CiSearch } from 'react-icons/ci';
 
 
 export const NavBar = () => {
@@ -21,40 +27,87 @@ export const NavBar = () => {
     <NavbarContent justify="start">
       <NavbarBrand className="mr-2 flex items-center">
         <NavbarLogo />
-        <NavbarContainer />
+        {/* <NavbarContainer /> */}
+
+    {/* ------------------------Áreas-------------------------------------- */}
+    <div className='mr-2'>
+    <Dropdown>
+      <DropdownTrigger>
+        
+      <Button color="primary" endContent={<FaStream/>}>
+        Áreas
+      </Button>   
+        </DropdownTrigger>
+        <DropdownMenu aria-label="Static Actions">
+        <DropdownItem key="B2C">B2C</DropdownItem>
+        <DropdownItem key="B2B">B2B</DropdownItem>
+        <DropdownItem key="SS">Shared Services</DropdownItem>
+        <DropdownItem key="SO">Sales Operations</DropdownItem>
+        {/* <DropdownItem key="SO" className="text-danger" color="danger">
+          Delete file
+        </DropdownItem> */}
+      </DropdownMenu>
+    </Dropdown>
+    </div>
+
+    {/* ------------------------Favoritos-------------------------------------- */}
+    <div className='mr-2'>
+    <Dropdown>
+      <DropdownTrigger>
+      <Button isIconOnly variant="flat" aria-label="Like" className='color="#E6F1FE"' >
+        <FaHeart style={{ color: "#FFFFFF" }}/>
+      </Button>  
+        </DropdownTrigger>
+        <DropdownMenu aria-label="Static Actions">
+        <DropdownItem key="new">New file</DropdownItem>
+        <DropdownItem key="copy">Copy link</DropdownItem>
+        <DropdownItem key="edit">Edit file</DropdownItem>
+        <DropdownItem key="delete" className="text-danger" color="danger">
+          Delete file
+        </DropdownItem>
+      </DropdownMenu>
+    </Dropdown>
+    </div>
+
+     {/* ------------------------Notificaciones-------------------------------------- */}
+     <div className='mr-2'>
+     <Dropdown>
+      <DropdownTrigger>
+        <Button isIconOnly variant="flat" aria-label="Like" className='color="#E6F1FE"'>
+          <IoNotifications style={{ color: "#FFFFFF" }}/>
+        </Button>  
+      </DropdownTrigger>
+        <DropdownMenu aria-label="Static Actions">
+        <DropdownItem key="new">New file</DropdownItem>
+        <DropdownItem key="copy">Copy link</DropdownItem>
+        <DropdownItem key="edit">Edit file</DropdownItem>
+        <DropdownItem key="delete" className="text-danger" color="danger">
+          Delete file
+        </DropdownItem>
+      </DropdownMenu>
+    </Dropdown>
+    </div>
+
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-3">
-        {/* <NavbarItem>
-          <Link color="success" href="#">
-            Features
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page" color="secondary">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
-          </Link>
-        </NavbarItem> */}
       </NavbarContent>
     </NavbarContent>
 
     <NavbarContent as="div" className="items-center" justify="end">
-      <Input
-        classNames={{
-          base: "max-w-full sm:max-w-[10rem] h-10",
-          mainWrapper: "h-full",
-          input: "text-small",
-          inputWrapper: "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
-        }}
-        placeholder="Type to search..."
-        size="sm"
-        startContent={<SearchIcon size={18} width={undefined} height={undefined} />}
-        type="search"
-      />
+
+    <Input
+    classNames={{
+      base: "max-w-[5rem] sm:max-w-full h-10", 
+      mainWrapper: "h-full",
+      input: "text-small",
+      inputWrapper: "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
+    }}
+    placeholder="Ingrese la página a buscar"
+    size="sm"
+    startContent={<CiSearch size={18} width={undefined} height={undefined} />}
+    type="search"
+    />
+
       <Dropdown placement="bottom-end">
         <DropdownTrigger>
           <Avatar
@@ -62,24 +115,22 @@ export const NavBar = () => {
             as="button"
             className="transition-transform"
             color="primary"
-            name="Jason Hughes"
+            name=""
             size="sm"
             src="/imgs/perfil.png"
           />
         </DropdownTrigger>
         <DropdownMenu aria-label="Profile Actions" variant="flat">
           <DropdownItem key="profile" className="h-14 gap-2">
-            <p className="font-semibold">Signed in as</p>
+            <p className="font-semibold">Inició sesión como</p>
             <p className="font-semibold">zoey@example.com</p>
           </DropdownItem>
-          <DropdownItem key="settings">My Settings</DropdownItem>
-          <DropdownItem key="team_settings">Team Settings</DropdownItem>
-          <DropdownItem key="analytics">Analytics</DropdownItem>
-          <DropdownItem key="system">System</DropdownItem>
-          <DropdownItem key="configurations">Configurations</DropdownItem>
-          <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
+          <DropdownItem key="settings">Mi perfil</DropdownItem>
+          <DropdownItem>
+            <SwitchDarkMode/>
+          </DropdownItem>
           <DropdownItem key="logout" color="danger">
-            Log Out
+            Cerrar sesión
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
