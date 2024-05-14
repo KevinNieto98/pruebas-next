@@ -11,9 +11,7 @@ import { initialData } from '@/seed';
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Input, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, Button, Switch} from "@nextui-org/react";
 
 import { FaHeart, FaMoon, FaStream } from 'react-icons/fa';
-import { IoIosNotifications } from 'react-icons/io';
 import { IoNotifications } from 'react-icons/io5';
-import { GoSun } from 'react-icons/go';
 import SwitchDarkMode from './SwitchDarkMode';
 import { CiSearch } from 'react-icons/ci';
 
