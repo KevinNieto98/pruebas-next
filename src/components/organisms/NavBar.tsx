@@ -21,139 +21,136 @@ export const NavBar = () => {
   // const { categories } = initialData
 
   return (
-    <Navbar className="bg-blue-900  top-0 start-0 border-b  flex justify-between ">
-      <NavbarContent>
-          <NavbarLogo />
-      </NavbarContent>
-      <NavbarContent justify="center"  className="max-w-full">
-        <NavbarBrand className=" flex items-center">
-          
-          {/* <NavbarContainer /> */}
+      <Navbar className="bg-blue-900 flex px-5 justify-between items-center w-full mb-5">
+        
+          {/* Primer div: Alineado a la izquierda */}
+          <div className="flex items-center justify-start">
+            <NavbarLogo />
 
-          {/* ------------------------Áreas-------------------------------------- */}
-          <div className='mr-2'>
-            <Dropdown>
-              <DropdownTrigger>
-
-                <Button color="primary" endContent={<FaStream />}>
-                  Áreas
-                </Button>
-              </DropdownTrigger>
-              <DropdownMenu aria-label="Static Actions">
-                <DropdownItem key="B2C">B2C</DropdownItem>
-                <DropdownItem key="B2B">B2B</DropdownItem>
-                <DropdownItem key="SS">Shared Services</DropdownItem>
-                <DropdownItem key="SO">Sales Operations</DropdownItem>
-                {/* <DropdownItem key="SO" className="text-danger" color="danger">
-          Delete file
-        </DropdownItem> */}
-              </DropdownMenu>
-            </Dropdown>
+            <div className='mr-2'>
+              <Dropdown>
+                <DropdownTrigger>
+                  <Button color="primary" endContent={<FaStream />}>
+                    Áreas
+                  </Button>
+                </DropdownTrigger>
+                <DropdownMenu aria-label="Static Actions">
+                  <DropdownItem key="B2C">B2C</DropdownItem>
+                  <DropdownItem key="B2B">B2B</DropdownItem>
+                  <DropdownItem key="SS">Shared Services</DropdownItem>
+                  <DropdownItem key="SO">Sales Operations</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
+            </div>
           </div>
 
-          {/* ------------------------Favoritos-------------------------------------- */}
-          <div className='mr-2'>
-            <Dropdown>
-              <DropdownTrigger>
-                <Button isIconOnly variant="flat" aria-label="Like" className='color="#E6F1FE"' >
-                  <FaHeart style={{ color: "#FFFFFF" }} />
-                </Button>
-              </DropdownTrigger>
-              <DropdownMenu aria-label="Static Actions">
-                <DropdownItem key="new">New file</DropdownItem>
-                <DropdownItem key="copy">Copy link</DropdownItem>
-                <DropdownItem key="edit">Edit file</DropdownItem>
-                <DropdownItem key="delete" className="text-danger" color="danger">
-                  Delete file
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
-
-          {/* ------------------------Notificaciones-------------------------------------- */}
-          <div className='mr-2'>
-            <Dropdown>
-              <DropdownTrigger>
-                <Button isIconOnly variant="flat" aria-label="Like" className='color="#E6F1FE"'>
-                  <IoNotifications style={{ color: "#FFFFFF" }} />
-                </Button>
-              </DropdownTrigger>
-              <DropdownMenu aria-label="Static Actions">
-                <DropdownItem key="new">New file</DropdownItem>
-                <DropdownItem key="copy">Copy link</DropdownItem>
-                <DropdownItem key="edit">Edit file</DropdownItem>
-                <DropdownItem key="delete" className="text-danger" color="danger">
-                  Delete file
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
-          {/* ------------------------Paginas de Interes-------------------------------------- */}
-          <div className='mr-2'>
-            <Dropdown>
-              <DropdownTrigger>
-                <Button isIconOnly variant="flat" aria-label="Like" className='color="#E6F1FE"'>
-                  <FaLightbulb style={{ color: "#FFFFFF" }} />
-                </Button>
-              </DropdownTrigger>
-              <DropdownMenu aria-label="Static Actions">
-                <DropdownItem key="new">New file</DropdownItem>
-                <DropdownItem key="copy">Copy link</DropdownItem>
-                <DropdownItem key="edit">Edit file</DropdownItem>
-                <DropdownItem key="delete" className="text-danger" color="danger">
-                  Delete file
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
-
-        </NavbarBrand>
-      </NavbarContent>
-
-      <NavbarContent as="div" className="items-center" justify="end">
-
-        <Input
-          classNames={{
-            base: "max-w-[5rem] sm:max-w-full h-10",
-            mainWrapper: "h-full",
-            input: "text-small",
-            inputWrapper: "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
-          }}
-          placeholder="Ingrese la página a buscar"
-          size="sm"
-          startContent={<CiSearch size={18} width={undefined} height={undefined} />}
-          type="search"
-        />
-
-        <Dropdown placement="bottom-end">
-          <DropdownTrigger>
-            <Avatar
-              isBordered
-              as="button"
-              className="transition-transform"
-              color="primary"
-              name=""
+          {/* Segundo div: Centrado */}
+          <div className="flex items-center justify-center">
+            <Input
+              classNames={{
+                base: "max-w-[30rem] sm:max-w-full h-10",
+                mainWrapper: "h-full",
+                input: "text-small",
+                inputWrapper: "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
+              }}
+              placeholder="Ingrese la página a buscar"
               size="sm"
-              src="/imgs/perfil.png"
+              startContent={<CiSearch size={18} width={undefined} height={undefined} />}
+              type="search"
             />
-          </DropdownTrigger>
-          <DropdownMenu aria-label="Profile Actions" variant="flat">
-            <DropdownItem key="profile" className="h-14 gap-2">
-              <p className="font-semibold">Inició sesión como</p>
-              <p className="font-semibold">zoey@example.com</p>
-            </DropdownItem>
-            <DropdownItem key="settings">Mi perfil</DropdownItem>
-            <DropdownItem>
-              <SwitchDarkMode />
-            </DropdownItem>
-            <DropdownItem key="logout" color="danger">
-              Cerrar sesión
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-      </NavbarContent>
-    </Navbar>
+          </div>
 
+          {/* Tercer div: Alineado a la derecha */}
+          <div className="flex items-center justify-end">
+            <NavbarBrand>
+              {/* ------------------------Favoritos-------------------------------------- */}
+              <div className='mr-2'>
+                <Dropdown>
+                  <DropdownTrigger>
+                    <Button isIconOnly variant="flat" aria-label="Like" className='color="#E6F1FE"' >
+                      <FaHeart style={{ color: "#FFFFFF" }} />
+                    </Button>
+                  </DropdownTrigger>
+                  <DropdownMenu aria-label="Static Actions">
+                    <DropdownItem key="new">New file</DropdownItem>
+                    <DropdownItem key="copy">Copy link</DropdownItem>
+                    <DropdownItem key="edit">Edit file</DropdownItem>
+                    <DropdownItem key="delete" className="text-danger" color="danger">
+                      Delete file
+                    </DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </div>
+
+              {/* ------------------------Notificaciones-------------------------------------- */}
+              <div className='mr-2'>
+                <Dropdown>
+                  <DropdownTrigger>
+                    <Button isIconOnly variant="flat" aria-label="Like" className='color="#E6F1FE"'>
+                      <IoNotifications style={{ color: "#FFFFFF" }} />
+                    </Button>
+                  </DropdownTrigger>
+                  <DropdownMenu aria-label="Static Actions">
+                    <DropdownItem key="new">New file</DropdownItem>
+                    <DropdownItem key="copy">Copy link</DropdownItem>
+                    <DropdownItem key="edit">Edit file</DropdownItem>
+                    <DropdownItem key="delete" className="text-danger" color="danger">
+                      Delete file
+                    </DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </div>
+              {/* ------------------------Paginas de Interes-------------------------------------- */}
+              <div className='mr-2'>
+                <Dropdown>
+                  <DropdownTrigger>
+                    <Button isIconOnly variant="flat" aria-label="Like" className='color="#E6F1FE"'>
+                      <FaLightbulb style={{ color: "#FFFFFF" }} />
+                    </Button>
+                  </DropdownTrigger>
+                  <DropdownMenu aria-label="Static Actions">
+                    <DropdownItem key="new">New file</DropdownItem>
+                    <DropdownItem key="copy">Copy link</DropdownItem>
+                    <DropdownItem key="edit">Edit file</DropdownItem>
+                    <DropdownItem key="delete" className="text-danger" color="danger">
+                      Delete file
+                    </DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </div>
+
+            </NavbarBrand>
+
+            <Dropdown>
+              <DropdownTrigger>
+                <Avatar
+                  isBordered
+                  as="button"
+                  className="transition-transform"
+                  color="primary"
+                  name=""
+                  size="sm"
+                  src="/imgs/perfil.png"
+                />
+              </DropdownTrigger>
+              
+              <DropdownMenu aria-label="Profile Actions" variant="flat">
+                <DropdownItem key="profile" className="h-14 gap-2">
+                  <p className="font-semibold">Inició sesión como</p>
+                  <p className="font-semibold">zoey@example.com</p>
+                </DropdownItem>
+                <DropdownItem key="settings">Mi perfil</DropdownItem>
+                <DropdownItem>
+                  <SwitchDarkMode />
+                </DropdownItem>
+                <DropdownItem key="logout" color="danger">
+                  Cerrar sesión
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+          </div>
+       
+      </Navbar>
 
   );
 };
