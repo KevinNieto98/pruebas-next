@@ -31,3 +31,7 @@ body {
     text-wrap: balance;
   }
 }
+
+body > div > main > nav > header{
+  max-width: none !important;
+}  
