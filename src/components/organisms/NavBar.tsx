@@ -8,7 +8,7 @@ import { DropdownButton } from '..';
 import { initialData } from '@/seed';
 
 
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Input, Dropdown, DropdownItem, DropdownTrigger, DropdownMenu, Avatar, Button, Switch, Select, SelectItem, useDisclosure } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Input, Dropdown, DropdownItem, DropdownTrigger, DropdownMenu, Avatar, Button, Switch, Select, SelectItem, useDisclosure, Badge } from "@nextui-org/react";
 
 import { FaHeart, FaLightbulb, FaMoon, FaStream } from 'react-icons/fa';
 import { IoNotifications } from 'react-icons/io5';
@@ -137,6 +137,7 @@ export const NavBar = () => {
                 >
                   <FaHeart style={{ color: "#FFFFFF" }} />
                 </Button>
+
               </DropdownTrigger>
               <DropdownMenu aria-label="Static Actions">
                 <DropdownItem key="new">New file</DropdownItem>
@@ -152,14 +153,17 @@ export const NavBar = () => {
           <div className='mr-2'>
             <Dropdown>
               <DropdownTrigger>
-                <Button
-                  isIconOnly
-                  variant="flat"
-                  aria-label="Like"
-                  className="color=#E6F1FE bg-transparent hover:bg-blue-950 rounded-xl"
-                >
-                  <IoNotifications style={{ color: "#FFFFFF" }} />
-                </Button>
+                <Badge content="5" color="danger">
+                  <Button
+                    isIconOnly
+                    variant="flat"
+                    aria-label="Like"
+                    className="color=#E6F1FE bg-transparent hover:bg-blue-950 rounded-xl"
+                  >
+                    <IoNotifications style={{ color: "#FFFFFF" }} />
+                  </Button>
+                </Badge>
+
               </DropdownTrigger>
               <DropdownMenu aria-label="Static Actions">
                 <DropdownItem key="new">New file</DropdownItem>
