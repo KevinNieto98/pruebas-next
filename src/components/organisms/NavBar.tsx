@@ -1,7 +1,7 @@
 'use client'
 import { useUIStore } from '@/store';
 import { NavbarLogo } from "../atoms";
-import { NavbarContainer } from "../molecules";
+import { NavbarContainer, NavbarDrawer } from "../molecules";
 import { BsDatabaseUp } from 'react-icons/bs';
 import { SeedData } from '@/interfaces';
 import { DropdownButton } from '..';
@@ -177,28 +177,24 @@ export const NavBar = () => {
           </div>
           {/* ------------------------Paginas de Interes-------------------------------------- */}
           <div className='mr-2'>
-            <Dropdown>
-              <DropdownTrigger>
-                <Button
-                  isIconOnly
-                  variant="flat"
-                  aria-label="Like"
-                  className="color=#E6F1FE bg-transparent hover:bg-blue-950 rounded-xl"
-                >
-                  <FaLightbulb style={{ color: "#FFFFFF" }} />
-                </Button>
-              </DropdownTrigger>
-              <DropdownMenu aria-label="Static Actions">
-                <DropdownItem key="new">New file</DropdownItem>
-                <DropdownItem key="copy">Copy link</DropdownItem>
-                <DropdownItem key="edit">Edit file</DropdownItem>
-                <DropdownItem key="delete" className="text-danger" color="danger">
-                  Delete file
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
-
+                {/* <Dropdown>
+                  <DropdownTrigger>
+                    <Button isIconOnly variant="flat" aria-label="Like" className='color="#E6F1FE"'>
+                      <FaLightbulb style={{ color: "#FFFFFF" }} />
+                    </Button>
+                  </DropdownTrigger>
+                  <DropdownMenu aria-label="Static Actions">
+                    <DropdownItem key="new">New file</DropdownItem>
+                    <DropdownItem key="copy">Copy link</DropdownItem>
+                    <DropdownItem key="edit">Edit file</DropdownItem>
+                    <DropdownItem key="delete" className="text-danger" color="danger">
+                      Delete file
+                    </DropdownItem>
+                  </DropdownMenu>
+                </Dropdown> */}
+                <NavbarDrawer />
+                {/* <p>test</p> */}
+              </div>
         </NavbarBrand>
 
         <Dropdown>

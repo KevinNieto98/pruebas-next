@@ -1,4 +1,5 @@
 export * from './NavbarItem'
+export * from './NavbarDrawerItem'
 export * from './DropdownItem'
 export * from './NavbarButton'
 export * from './NavbarLogo'
