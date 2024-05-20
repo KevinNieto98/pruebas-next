@@ -1,4 +1,4 @@
-import { NavBar, Sidebar, DropdownSpace } from "@/components";
+import { NavBar } from "@/components";
 import { NextUIProvider } from "@nextui-org/react";
 import {ThemeProvider as NextThemesProvider} from "next-themes";
 

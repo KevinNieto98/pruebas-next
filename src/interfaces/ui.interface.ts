@@ -1,17 +1,17 @@
-export interface  SubCategoryMenu {
+export interface  subMenuItem {
     id: number,
-    name: string,
-    icon :  JSX.Element 
+    name: string
   }
   
   
-export interface CategoryMenu {
-    codigo: string,
+export interface menuItem {
+    key: number,
     name: string,
-    subCategories : SubCategoryMenu[] 
+    icon: string,
+    subMenuItem : subMenuItem[] 
   }
   
   export  interface SeedData {
-    categories: CategoryMenu[];
+    menuItem: menuItem[];
   }
   

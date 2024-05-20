@@ -4,7 +4,7 @@ import {Switch} from "@nextui-org/react";
 import { GoSun } from "react-icons/go";
 import { FaMoon } from "react-icons/fa";
 
-export default function SwitchDarkMode() {
+export const  SwitchDarkMode = () => {
   return (
     <Switch
       defaultSelected

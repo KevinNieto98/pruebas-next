@@ -1,9 +1,10 @@
-// import { IoPower, IoPersonOutline, IoMegaphoneOutline, IoHelpSharp } from "react-icons/io5";
-import { NavbarDrawItem } from "../atoms";
-import { Drawer, Box, Typography, Divider } from "@mui/material"
+'use client'
+
 import { useState } from "react";
 import { FaLightbulb } from 'react-icons/fa';
-import { Button } from "@nextui-org/react";
+import { Button, Divider } from "@nextui-org/react";
+import { NavbarDrawItem } from "@/components";
+import { Box, Drawer, Typography } from "@mui/material";
 
 export const NavbarDrawer = () => {
 
