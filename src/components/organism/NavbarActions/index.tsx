@@ -36,16 +36,19 @@ export const NavbarActions = () => {
               </DropdownMenu>
             </Dropdown>
           </div>
-          {menuItem.map((menuItem) => (
+          {/* {menuItem.map((menuItem) => (
             <NavbarDropdown key={menuItem.key}
               icon={menuItem.icon}
               name={menuItem.name}
               subMenuItem={menuItem.subMenuItem}
             >
               </NavbarDropdown>
-            ))}
-          <NavbarDrawer/>
+            ))} */}
+          {/* --------------------------------Páginas favoritas--------------------------------------- */}
+          <NavbarDrawer action='pag_favoritas'/>
 
+          {/* --------------------------------Páginas de interes-------------------------------------- */}
+          <NavbarDrawer action='pag_interes'/>
         </NavbarBrand>
       </div>
     );
