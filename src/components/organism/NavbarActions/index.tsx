@@ -6,7 +6,7 @@ import { Badge, Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, N
 
 export const NavbarActions = () => {
     const { menuItem } = initialData
-    console.log(menuItem);
+    //console.log(menuItem);
     return (
       <div className='mx-5'>
         <NavbarBrand>
@@ -47,8 +47,6 @@ export const NavbarActions = () => {
           <NavbarDrawer/>
 
         </NavbarBrand>
-
-
       </div>
     );
 };

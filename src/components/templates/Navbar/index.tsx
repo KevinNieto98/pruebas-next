@@ -7,13 +7,14 @@ import { IoNotifications } from 'react-icons/io5';
 import { CiSearch } from 'react-icons/ci';
 import { initialData } from "@/seed";
 import { NavbarActions, NavbarDropdown, NavbarLogo, NavbarProfile, SwitchDarkMode } from "@/components";
+import Flyout from "./flyout";
 
 
 
 export const NavBar = () => {
   const { menuItem } = initialData
 
-  console.log(menuItem);
+  //console.log(menuItem);
   
   const so = [
     { value: 'ICS', label: 'ICS' },
@@ -41,6 +42,10 @@ export const NavBar = () => {
       {/* Primer div: Alineado a la izquierda */}
       <div className="flex items-center justify-start">
         <NavbarLogo />
+
+        <div>
+          <Flyout/>
+        </div>
 
         <div className='mr-2'>
           <Dropdown backdrop="blur">
@@ -99,7 +104,8 @@ export const NavBar = () => {
       </div>
 
       {/* Segundo div: Centrado */}
-      <div className="flex items-center justify-center flex-grow">
+
+      {/* <div className="flex items-center justify-center flex-grow">
         <Input
           classNames={{
             base: "max-w-[30rem] sm:max-w-full h-10",
@@ -112,7 +118,22 @@ export const NavBar = () => {
           startContent={<CiSearch size={18} width={undefined} height={undefined} />}
           type="search"
         />
-      </div>
+      </div> */}
+
+      <div className="flex items-center justify-end flex-grow">
+      <Input
+        classNames={{
+          base: "w-80 max-w-[10rem] sm:max-w-full h-10 rounded-2xl", // Ajusté el ancho y el tamaño máximo
+          mainWrapper: "h-full",
+          input: "text-small",
+          inputWrapper: "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
+        }}
+        placeholder="Ingrese la página a buscar"
+        size="sm"
+        startContent={<CiSearch size={18} width={undefined} height={undefined} />}
+        type="search"
+      />
+    </div>
 
       {/* Tercer div: Alineado a la derecha */}
       <div className="flex items-center justify-end">
